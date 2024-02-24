@@ -5,11 +5,12 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{BC022870-A8A7-4295-9F23-EF5AA378C3AE}</ProjectGuid>
+        <ProjectGuid>{103F89F4-1796-4565-B18A-3CD4FECAE9DC}</ProjectGuid>
+        <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>dotNetShipping</RootNamespace>
-        <AssemblyName>dotNetShipping</AssemblyName>
+        <RootNamespace>dotNetShipping.tests</RootNamespace>
+        <AssemblyName>dotNetShipping.tests</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -37,14 +38,19 @@
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
         <Reference Include="System.Xml"/>
+        <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
+            <HintPath>..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="dotNetShipping.cs" />
+        <Compile Include="Tests.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Models\" />
-      <Folder Include="ShippingProviders\" />
+      <ProjectReference Include="..\dotNetShipping\dotNetShipping.csproj">
+        <Project>{bc022870-a8a7-4295-9f23-ef5aa378c3ae}</Project>
+        <Name>dotNetShipping</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
