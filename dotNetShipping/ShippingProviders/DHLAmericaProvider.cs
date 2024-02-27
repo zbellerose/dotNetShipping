@@ -34,7 +34,9 @@ namespace dotNetShipping.ShippingProviders
         
         public override Task GetRates()
         {
-            throw new System.NotImplementedException();
+            string accessToken = RequestAccessToken();
+            
+            return Task.CompletedTask;
         }
 
         private string RequestAccessToken()
